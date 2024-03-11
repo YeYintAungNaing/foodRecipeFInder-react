@@ -5,11 +5,13 @@ export const GlobalContext = createContext(null);
 
 function GlobalState({children}) {
     
-    const [searchKey, setSearchKey] = useState("");
+    const [searchKey, setSearchKey] = useState("");    //user input search
     const [loading, setLoading] = useState('false');
-    const [recipeList, setRecipeList] = useState([])
+    const [recipeList, setRecipeList] = useState([])   //list of recipes
+    const [recipeDetails, setRecipeDetails] = useState(null)
 
-    async function handleSubmit(event){
+
+    async function handleSubmit(event){   // submit on search bar 
         event.preventDefault()
         //console.log('submitted')
 
@@ -32,7 +34,7 @@ function GlobalState({children}) {
         }
     }
 
-    //console.log(recipeList)
+    //console.log(recipeList)   
 
 
     return (
@@ -41,7 +43,10 @@ function GlobalState({children}) {
                 setSearchKey, 
                 handleSubmit, 
                 loading, 
-                recipeList}}>
+                recipeList,
+                recipeDetails, 
+                setRecipeDetails
+                }}>
                 {children}
         </GlobalContext.Provider>
     )

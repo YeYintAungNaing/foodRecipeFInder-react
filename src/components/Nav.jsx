@@ -12,9 +12,6 @@ function Nav(){
         <li>
           <Link to="/favourites">Favourites</Link>
         </li>
-        <li>
-          <Link to="/information">Info</Link>
-        </li>
       </ul>
     </nav>
   )
