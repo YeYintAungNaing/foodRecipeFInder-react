@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { GlobalContext } from '../context/global-state'
-import { NavItem } from 'react-bootstrap'
 
 
 function Information() {

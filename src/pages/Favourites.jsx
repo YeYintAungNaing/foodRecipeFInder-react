@@ -1,10 +1,17 @@
 import React, { useContext } from 'react'
-import { useState } from 'react'
 import { GlobalContext } from '../context/global-state'
 import { Link } from 'react-router-dom'
 
 function Favourites() {
   const {favList, setFavList} = useContext(GlobalContext)
+
+  function removeFromFav(itemID){    //fav item has title and id as key
+      let updatedList = favList.slice()
+      //console.log(itemID)
+      updatedList = updatedList.filter((item)=> item.id !== itemID);
+      setFavList(updatedList)
+      //setFavList((favList) => favList.filter((item)=> item.id !== itemID))    //the first favList acts as a parameter  
+  }
 
   return (
     <div>
@@ -14,7 +21,8 @@ function Favourites() {
           <Link
             to={`/recipe-item/${item.id}`}>
             {item.title}
-          </Link> 
+          </Link>
+          <button onClick={()=>removeFromFav(item.id)}>remove</button> 
         </li>)
         )}
     </div>
