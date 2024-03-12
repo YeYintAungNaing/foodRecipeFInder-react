@@ -9,6 +9,7 @@ function GlobalState({children}) {
     const [loading, setLoading] = useState('false');
     const [recipeList, setRecipeList] = useState([])   //list of recipes
     const [recipeDetails, setRecipeDetails] = useState(null)
+    const [favList, setFavList] = useState([])
 
 
     async function handleSubmit(event){   // submit on search bar 
@@ -39,15 +40,18 @@ function GlobalState({children}) {
 
     return (
         <GlobalContext.Provider 
-        value={{searchKey, 
-                setSearchKey, 
-                handleSubmit, 
-                loading, 
-                recipeList,
-                recipeDetails, 
-                setRecipeDetails
-                }}>
-                {children}
+        value={{
+            searchKey, 
+            setSearchKey, 
+            handleSubmit, 
+            loading, 
+            recipeList,
+            recipeDetails, 
+            setRecipeDetails,
+            favList,
+            setFavList
+        }}>
+            {children}
         </GlobalContext.Provider>
     )
 }

@@ -25,12 +25,12 @@ function Home() {
     {recipeList.length !== 0 && (
       recipeList.map((element)=>
         <div key={element.id}>
-            <h2>{element.title}</h2>
-            <img src={element.image_url} alt={altImg}></img>
-            <Link
-              to={`/recipe-item/${element.id}`}>
-              Recipe Details
-            </Link>  
+          <h2>{element.title}</h2>
+          <img src={element.image_url} alt={altImg}></img>
+          <Link
+            to={`/recipe-item/${element.id}`}>
+            Recipe Details
+          </Link>  
         </div>
       ))}
     </>
